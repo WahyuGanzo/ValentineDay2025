@@ -32,13 +32,19 @@ h4 {
 	background: #ffffff;
 	transform-style: preserve-3d;
 	transform: translate(-50%,-50%) perspective(2000px);
+	-webkit-transform-style: preserve-3d; /* Tambahkan prefiks -webkit- */
+	-webkit-transform: translate(-50%,-50%) perspective(2000px); /* Safari */
 	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+	-webkit-box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5); /* Safari */
 	transition: 1s;
+	-webkit-transition: 1s; /* Safari */
 }
 
 .card:hover {
 	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+	-webkit-transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2); /* Safari */
 	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+	-webkit-box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5); /* Safari */
 }
 
 .card:before {
@@ -70,7 +76,9 @@ h4 {
 	height: 100%;
 	position: relative;
 	transform-origin: left;
+	-webkit-transform-origin: left; /* Safari */
 	transition: .7s;
+	-webkit-transition: .7s; /* Safari */
 }
 
 .card .bark {
@@ -89,12 +97,15 @@ h4 {
 
 .card:hover .imgBox {
 	transform: rotateY(-135deg);
+	-webkit-transform: rotateY(-135deg); /* Safari */
 }
 
 .card:hover .bark {
 	opacity: 1;
 	transition: .6s;
-  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+	-webkit-transition: .6s; /* Safari */
+	box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+	-webkit-box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset; /* Safari */
 }
 
 .card .details {
