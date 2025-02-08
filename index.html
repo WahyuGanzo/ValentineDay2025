@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.ibb.co.com/hXZsYxZ/heart.png">
+    <title>Happy Valentine</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-top: 20px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: slidein 4s ease-in-out infinite alternate;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 0, 102, 0.8);
+            transform: rotate(45deg);
+            animation: float 10s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 0, 102, 0.8);
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: 0;
+            left: -10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+            }
+
+            50% {
+                transform: translateY(-50px) rotate(45deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(45deg);
+            }
+        }
+
+        .tombol {
+            background-color: #ff9a9e;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 20px #fff;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .tombol:hover {
+            transform: scale(1.2);
+            background-color: #ffffff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Happy Valentine's Day! ❤️</h1>
+        <p>15 Februari 2025, from Lorem to Ipsum</p>
+        <a href="index2.html" class="tombol">Click Here!</a>
+    </div>
+
+    <!-- Animasi Hati -->
+    <script>
+        function createHearts() {
+            for (let i = 0; i < 50; i++) {
+                let heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 5 + 5 + 's'
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 10000);
+            }
+        }
+
+        setInterval(createHearts, 1000);
+    </script>
+
+</body>
+
+</html>
