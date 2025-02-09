@@ -13,6 +13,15 @@
 </head>
 
 <body>
+    <audio id="backgroundAudio" autoplay loop src="blue.mp3"></audio>
+    <script>
+        window.onload = function() {
+            var audio = document.getElementById('backgroundAudio');
+            audio.play().catch(function(error) {
+                console.log("Audio autoplay failed:", error);
+            });
+        }
+    </script>
     <div class="card">
         <div class="imgBox">
             <div class="bark"></div>
